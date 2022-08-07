@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Панда</title>
+    <style>
+      body {
+        background-color: #e5e5e5;
+      }
+      .panda {
+        position: fixed;
+        width: 332px;
+        height: 298px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    </style>
+</head>
+<body>
+  <svg class="panda" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 166 149" preserveAspectRatio="xMidYMid meet">
+    <g class="ears">
+      <g class="ear-left" transform="rotate(-45 34 29)">
+        <ellipse cx="34" cy="29" rx="23" ry="18" fill="#4a4a4a"/>
+        <ellipse cx="34" cy="29" rx="12" ry="8" fill="#000"/>
+      </g>
+      <g class="ear-right" transform="rotate(45 134 29)">
+        <ellipse cx="134" cy="29" rx="23" ry="18" fill="#4a4a4a"/>
+        <ellipse cx="134" cy="29" rx="12" ry="8" fill="#000"/>
+      </g>
+    </g>
+    <circle cx="84" cy="79" r="70" fill="#fff"/>
+    <g class="eyes">
+      <g class="eye-left">
+        <ellipse cx="52" cy="80" rx="15" ry="18" fill="#4a4a4a"/>
+        <circle cx="52" cy="75" r="7" fill="#000"/>
+        <circle cx="50" cy="73" r="3" fill="#fff"/>
+      </g>
+      <g class="eye-right">
+        <ellipse cx="116" cy="80" rx="15" ry="18" fill="#4a4a4a"/>
+        <circle cx="116" cy="75" r="7" fill="#000"/>
+        <circle cx="114" cy="73" r="3" fill="#fff"/>
+      </g>
+    </g>
+    <ellipse cx="84" cy="98" rx="10" ry="7" fill="#000"/>
+  </svg>
+</body>
+</html>
