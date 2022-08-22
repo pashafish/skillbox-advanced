@@ -1,0 +1,180 @@
+-
+  var navigation = [{title: "О\u00A0студии", href: "#about"},
+                    {title: "Наши\u00A0проекты", href: "#projects"},
+                    {title: "Услуги", href: "#"},
+                    {title: "Мастер-классы", href: "#"},
+                    {title: "Контакты", href: "#contacts"}
+  ]
+  var projectCards = [{large: false, img: {src: 'img/project-1', alt: "Пейзаж", type: "jpg"}, title: "Синтетически, смешаны с\u00A0не\u00A0уникальными данными до\u00A0степени...", date: "16\u00A0июня", tag: "#пейзаж1"},
+                      {large: false, img: {src: 'img/project-2', alt: "Портрет", type: "jpg"}, title: "В\u00A0своём стремлении улучшить опыт мы упускаем, что явные...", date: "28\u00A0мая", tag: "#портрет"},
+                      {large: false, img: {src: 'img/project-3', alt: "Предмет", type: "jpg"}, title: "Равным образом, высокое качество позиционных...", date: "14\u00A0мая", tag: "#предмет"},
+                      {large: true, img: {src: 'img/project-4', alt: "Fuji", type: "jpg"}, link: "#", title: "Cемантический разбор", descr: "В\u00A0рамках спецификации современных стандартов, интерактивные прототипы", date: "9\u00A0апреля", tag: "#fuji"},
+                      {large: true, img: {src: 'img/project-5', alt: "Проект забвение", type: "jpg"}, link: "#", title: "Забвение", descr: "Играет важную роль в\u00A0формировании глубокомысленных рассуждений", date: "20\u00A0марта", tag: "#проектзабвение"},
+                      {large: false, img: {src: 'img/project-6', alt: "Ретушь", type: "jpg"}, title: "Как принято считать, многие известные личности и\u00A0по\u00A0сей день остаются уделом либералов...", date: "1\u00A0марта", tag: "#ретушь"},
+                      {large: false, img: {src: 'img/project-7', alt: "Портрет", type: "jpg"}, title: "С\u00A0учётом сложившейся международной обстановки, новая модель организационной...", date: "9\u00A0марта", tag: "#портрет"}
+  ]
+doctype html
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+
+    link(rel="shortcut icon", href="img/favicon.svg", type="image/svg+xml")
+
+    link(rel="preconnect", href="https://fonts.googleapis.com")
+    link(rel="preconnect", href="https://fonts.gstatic.com", crossorigin)
+    link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto:wght@400;700&display=swap")
+
+    link(rel="stylesheet", href="css/normalize.css")
+    link(rel="stylesheet", href="css/main.css")
+    title High pass &mdash; Студия фотографии
+  body
+    h1.visually-hidden Студия фотографии High pass
+    header.header
+      .container
+        a.logo.header__logo(href="/")
+          img.img.header__logo-img(src="img/logo.svg", alt="Логотип High pass")
+        nav.header__nav
+          button.btn-reset.close-btn.header__nav-close(aria-label="Скрыть меню")
+          ul.list-reset.header__nav-list
+            each nav in navigation
+              li.header__nav-item
+                a.header__nav-link(href=nav.href)= nav.title
+          a.primary-link.header__nav-tel(href="tel:+749542423532")
+            svg
+              use(xlink:href="img/sprite.svg#tel")
+            span +7&nbsp;495&nbsp;424-23-532
+        button.btn-reset.header__search(aria-label="Поиск")
+          svg
+            use(xlink:href="img/sprite.svg#search")
+        form.header__search-form(action="/")
+          input.header__search-form-inp(type="search", name="Поиск", placeholder="Что будем искать?")
+          button.btn-reset.close-btn.header__search-form-btn(aria-label="Закрыть поле поиска")
+      .header__burger
+        .container
+          button.btn-reset.header__burger-btn(aria-label="Показать меню")
+            svg
+              use(xlink:href="img/sprite.svg#burger")
+    main.main
+      section.hero
+        .container
+          .hero__announce
+            picture
+                source(srcset="img/hero-announce-s.jpg", media="(max-width: 767.98px)")
+                source(srcset="img/hero-announce-m.jpg", media="(max-width: 1023.98px)")
+                source(srcset="img/hero-announce-l.jpg", media="(max-width: 1439.98px)")
+                img.img.hero__announce-img(src="img/hero-announce.jpg", alt="Неоновый фотосет 2.0")
+            p.hero__announce-descr Мастер-класс от&nbsp;Игоря Робова
+            h2.hero__announce-title Неоновый фотосет 2.0 7&nbsp;июля 20:00
+            a.colored-btn.hero__announce-link(href="#") Узнать больше
+            span.tag.hero__announce-tag #мастеркласс
+          .hero__works
+            h2.hero__works-title Работы участников предыдущего мастер-класса
+            .hero__works-grid
+              picture
+                source(srcset="img/hero-work-1-s.jpg", media="(max-width: 767.98px)")
+                source(srcset="img/hero-work-1-m.jpg", media="(max-width: 1023.98px)")
+                source(srcset="img/hero-work-1-l.jpg", media="(max-width: 1439.98px)")
+                img.img.hero__works-img(src="img/hero-work-1.jpg", alt="Работа 1")
+              picture
+                source(srcset="img/hero-work-2-s.jpg", media="(max-width: 767.98px)")
+                source(srcset="img/hero-work-2-m.jpg", media="(max-width: 1023.98px)")
+                source(srcset="img/hero-work-2-l.jpg", media="(max-width: 1439.98px)")
+                img.img.hero__works-img(src="img/hero-work-2.jpg", alt="Работа 2")
+              picture
+                source(srcset="img/hero-work-3-s.jpg", media="(max-width: 767.98px)")
+                source(srcset="img/hero-work-3-m.jpg", media="(max-width: 1023.98px)")
+                source(srcset="img/hero-work-3-l.jpg", media="(max-width: 1439.98px)")
+                img.img.hero__works-img(src="img/hero-work-3.jpg", alt="Работа 3")
+      section.about#about
+        .container
+          h2.about__title О&nbsp;студии
+          .about__grid
+            p.about__descr В&nbsp;рамках спецификации современных стандартов, интерактивные прототипы, инициированные исключительно синтетически, ограничены исключительно образом мышления. Предварительные выводы неутешительны: высокотехнологичная концепция общественного уклада требует от&nbsp;нас анализа соответствующих условий активизации! Следует отметить, что семантический разбор внешних противодействий фиксирует необходимость распределения внутренних резервов и&nbsp;ресурсов. Безусловно, граница обучения кадров предоставляет широкие возможности для первоочередных требований. Повседневная практика показывает, что глубокий уровень погружения предполагает независимые способы реализации новых принципов формирования материально-технической и&nbsp;кадровой базы. Приятно, граждане, наблюдать, как явные признаки институционализации являются только методом политического участия и&nbsp;нарушающими общечеловеческие нормы этики.
+            .about__wrapper
+              picture
+                source(srcset="img/about-s.jpg", media="(max-width: 767.98px)")
+                source(srcset="img/about-m.jpg", media="(max-width: 1023.98px)")
+                source(srcset="img/about-l.jpg", media="(max-width: 1439.98px)")
+                img.img.about__img(src="img/about.jpg", alt="Фотоаппарат")
+              h3.about__subtitle Подписаться на&nbsp;рассылку
+              form.about__form(action="/" method="POST")
+                .form-wrapper
+                  input.text-inp.text-inp--dark.about__form-inp(type="email", name="E-mail", placeholder="Email")
+                  span.form-error-msg
+                button.btn-reset.colored-btn.about__form-btn Отправить
+      section.projects#projects
+        .container
+          h2.projects__title Наши&nbsp;проекты
+          .projects__grid
+            each projectCard in projectCards
+              if projectCard.large
+                .project.project--large
+                  picture
+                    source(srcset=projectCard.img.src + "-s." + projectCard.img.type, media="(max-width: 767.98px)")
+                    source(srcset=projectCard.img.src + "-m." + projectCard.img.type, media="(max-width: 1023.98px)")
+                    source(srcset=projectCard.img.src + "-l." + projectCard.img.type, media="(max-width: 1439.98px)")
+                    img.img.project__img(src=projectCard.img.src + "." + projectCard.img.type, alt=projectCard.img.alt)
+                  span.project__date= projectCard.date
+                  h3.project__title= projectCard.title
+                  p.project__descr= projectCard.descr
+                  a.transp-btn.project__btn(href=projectCard.link) О&nbsp;проекте
+                  span.tag.project__tag= projectCard.tag
+              else
+                .project
+                  picture
+                    source(srcset=projectCard.img.src + "-s." + projectCard.img.type, media="(max-width: 767.98px)")
+                    source(srcset=projectCard.img.src + "-m." + projectCard.img.type, media="(max-width: 1023.98px)")
+                    source(srcset=projectCard.img.src + "-l." + projectCard.img.type, media="(max-width: 1439.98px)")
+                    img.img.project__img(src=projectCard.img.src + "." + projectCard.img.type, alt=projectCard.img.alt)
+                  h3.project__title= projectCard.title
+                  span.project__date= projectCard.date
+                  span.tag.project__tag= projectCard.tag
+      section.contacts#contacts
+        .container
+          h2.contacts__title Контакты
+          .contacts__grid
+            .contacts__map#map
+              .contacts__map-wrapper.contacts__map-wrapper--active
+                h3.contacts__map-subtitle Студия &laquo;High pass&raquo;
+                address.contacts__map-addr
+                  span 107045, Москва, Даев переулок, дом&nbsp;41, бизнес-центр &laquo;Даев Плаза&raquo;, этаж&nbsp;8, офис &#8470;&nbsp;82
+                  a.primary-link.contacts__map-tel(href="tel:+749542423532")
+                    svg
+                      use(xlink:href="img/sprite.svg#tel")
+                    span +7&nbsp;495&nbsp;424-23-532
+                button.btn-reset.close-btn.contacts__map-btn(aria-label="Закрыть")
+            form.contacts__form(action="/", method="POST")
+              h3.contacts__form-title Оставить заявку
+              p.contacts__form-descr Оставьте ваши данные, указав в&nbsp;графе &laquo;Комментарий&raquo; желаемые время и&nbsp;дату съёмки или другого мероприятия
+              .form-wrapper
+                input.text-inp.text-inp--light.contacts__form-inp(type="text", name="Name", placeholder="Имя")
+                span.form-error-msg
+              .form-wrapper
+                input.text-inp.text-inp--light.contacts__form-inp(type="email", name="E-mail", placeholder="Email")
+                span.form-error-msg
+              .form-wrapper
+                textarea.text-inp.text-inp--light.contacts__form-textar(name="Message", placeholder="Комментарий")
+                span.form-error-msg
+              button.btn-reset.colored-btn.contacts__form-btn Отправить
+    footer.footer
+      .container
+        .footer__logo
+          a.logo.footer__logo-link(href="/")
+            img.img.footer__logo-img(src="img/footer-logo.svg", alt="Логотип High pass")
+          p.footer__logo-descr Фотостудия High pass&reg; 2018&ndash;2020
+        p.footer__text Которая из&nbsp;моих фотографий самая любимая? Та, которую я&nbsp;собираюсь снять завтра. &copy;&nbsp;Имоджен Каннингем
+        .footer__socials
+          p.footer__socials-text Больше интересного:
+          ul.list-reset.footer__socials-list
+            li.footer__socials-item
+              a.footer__socials-link(href="#", aria-label="Одноклассники", title="Одноклассники")
+                svg
+                  use(xlink:href="img/sprite.svg#ok")
+            li.footer__socials-item
+              a.footer__socials-link(href="#", aria-label="В контакте", title="Вконтакте")
+                svg
+                  use(xlink:href="img/sprite.svg#vk")
+    script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU")
+    script(src="js/main.js")

@@ -1,0 +1,70 @@
+$primary-col: #ff6e30;
+$primary-hover-col: #bc572b;
+$primary-active-col: #ce4307;
+$error-light-col: #f06666;
+$error-dark-col: #ff3030;
+$focus-bg-col: #ffd4c1;
+$bg-lightest-col: #fff;
+$bg-light-col: #e9e9e9;
+$bg-darkest-col: #202020;
+$bg-dark-overlay-col: rgba(32, 32, 32, .85);
+$bg-input-dark-col: #4a4a4a;
+$text-grey-col: #cacaca;
+$text-dark-grey-col: #999;
+$line-height-text: 1.8;
+$line-height-medium-text: 1.15;
+$line-height-text-2: 1.4;
+$line-height-headers: 1;
+$container-max-width: ('xl': 1290px, 'l': 963px, 'm': 714px, 's': 100%);
+$container-padding: ('xl': 30px, 'l': 30px, 'm': 30px, 's': 20px);
+
+@mixin stretch {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin grey-icon-states {
+  outline: none;
+
+  svg {
+    transition: fill 150ms ease-in-out;
+  }
+
+  &:focus-visible{
+    svg {
+      fill: $primary-hover-col;
+    }
+  }
+
+  &:hover {
+    svg {
+      fill: $primary-col;
+    }
+  }
+
+  &:active {
+    svg {
+      fill: $primary-active-col;
+    }
+  }
+}
+
+:root {
+  --font-size-text: 16px;
+  --font-size-medium-text: 14px;
+  --font-size-small-text: 12px;
+  --font-size-error-text: 9px;
+  --font-size-headers: 24px;
+  --font-size-card-headers: 24px;
+  --font-size-large-headers: 36px;
+
+  @media (max-width: 767.98px) {
+    --font-size-text: 14px;
+    --font-size-medium-text: 10px;
+    --font-size-small-text: 12px;
+    --font-size-headers: 18px;
+    --font-size-large-headers: 24px;
+  }
+}
